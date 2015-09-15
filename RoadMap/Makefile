@@ -20,7 +20,7 @@ RoadMap: RoadMap.c
 RoadMap_staticGProf: RoadMap_static.c
 	$(CC) $(CFLAGS) -pg RoadMap_static.c -o RoadMap_staticGProf $(INC) $(LIB)
 
-RoadMap_static: RoadMap_static.c AASDASDASADSKSK
+RoadMap_static: RoadMap_static.c
 	$(CC) $(CFLAGS) RoadMap_static.c -o RoadMap_static $(INC) $(LIB)
 
 RoadMap_static2: RoadMap_static2.c
