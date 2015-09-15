@@ -67,22 +67,22 @@
 \begin{tabular}{ll}
 \bf{OTF Version:} & \verb|1.11.1openmpi| \\
 \bf{Creator:} & \verb|VampirTrace 5.13.1openmpi|\\
-\bf{File:} & \verb|RoadMapProf_static.otf|
+\bf{File:} & \verb|RoadMapProf_dynamic.otf|
 \end{tabular}
 
 \vspace{1\baselineskip}
 \begin{tabular}{ll}
 \bf{Number of Processes:} & \verb|6|\\
-\bf{Timer Resolution:} & \verb|3.59135 GHz|
+\bf{Timer Resolution:} & \verb|3.59134 GHz|
 \end{tabular}
 
 \vspace{1\baselineskip}
 \begin{tabular}{l}\bf{Comments:}\end{tabular}
 \begin{quote}\begin{verbatim}
 Trace Times:
- Start: Wed Sep 16 00:31:39 2015 (1442356299868475)
- Stop: Wed Sep 16 00:31:48 2015 (1442356308409705)
- Elapsed: 00:00:08 (8541230)
+ Start: Wed Sep 16 00:56:25 2015 (1442357785785136)
+ Stop: Wed Sep 16 00:56:31 2015 (1442357791947693)
+ Elapsed: 00:00:06 (6162557)
 VampirTrace Environment:
  VT_MODE: TRACE
  VT_BUFFER_SIZE: 32M
@@ -111,28 +111,27 @@ VampirTrace Environment:
 \newpage
 
 \begin{center}\small
-{\Large \bf Top 12 of 12 Functions}
+{\Large \bf Top 11 of 11 Functions}
 \bigskip
 \begin{longtable}{|l||r|r|r|}
 
    \hline
    \bf Function & \bf invocations[\#] & \bf excl. time[sec] $\nabla$ & \bf incl. time[sec] \\
    \hline\hline
-  \verb|RoadMap| &   \verb|6| &   \verb|23.1318| &   \verb|45.5133| \\
-  \verb|MPI_Barrier| &   \verb|60| &   \verb|12.4361| &   \verb|12.4361| \\
-  \verb|MPI_Recv| &   \verb|8 000| &   \verb|7.20719| &   \verb|7.20719| \\
+  \verb|RoadMap| &   \verb|6| &   \verb|23.3886| &   \verb|33.5949| \\
+  \verb|MPI_Recv| &   \verb|16 050| &   \verb|8.41281| &   \verb|8.41281| \\
+  \verb|MPI_Init| &   \verb|6| &   \verb|2.09115| &   \verb|2.15531| \\
       \hline
-  \verb|MPI_Init| &   \verb|6| &   \verb|2.56581| &   \verb|2.63467| \\
-  \verb|CreateMap| &   \verb|510| &   \verb|1.67327| &   \verb|10.5095| \\
-  \verb|MPI_Send| &   \verb|8 000| &   \verb|1.06495| &   \verb|1.06495| \\
+  \verb|CreateMap| &   \verb|510| &   \verb|1.70228| &   \verb|8.9892| \\
+  \verb|main| &   \verb|6| &   \verb|0.435866| &   \verb|36.2431| \\
+  \verb|sync time| &   \verb|12| &   \verb|0.119966| &   \verb|0.119966| \\
       \hline
-  \verb|main| &   \verb|6| &   \verb|0.58333| &   \verb|48.7933| \\
-  \verb|sync time| &   \verb|12| &   \verb|0.129503| &   \verb|0.129503| \\
-  \verb|MPI_Finalize| &   \verb|6| &   \verb|0.00105601| &   \verb|0.0616988| \\
+  \verb|MPI_Send| &   \verb|16 050| &   \verb|0.0911484| &   \verb|0.0911484| \\
+  \verb|MPI_Finalize| &   \verb|6| &   \verb|0.00106719| &   \verb|0.056867| \\
+  \verb|setup_colors| &   \verb|6| &   \verb|0.000218915| &   \verb|0.000218915| \\
       \hline
-  \verb|setup_colors| &   \verb|6| &   \verb|0.000200889| &   \verb|0.000200889| \\
-  \verb|MPI_Comm_rank| &   \verb|66| &   \verb|2.94117e-05| &   \verb|2.94117e-05| \\
-  \verb|MPI_Comm_size| &   \verb|60| &   \verb|1.42036e-05| &   \verb|1.42036e-05| \\
+  \verb|MPI_Comm_rank| &   \verb|66| &   \verb|2.21132e-05| &   \verb|2.21132e-05| \\
+  \verb|MPI_Comm_size| &   \verb|60| &   \verb|1.47407e-05| &   \verb|1.47407e-05| \\
    \hline
 \end{longtable}
 
@@ -242,10 +241,10 @@ xticklabels={
 },]
 \addplot[ybar, draw=black, mark=none, fill=red, xshift=-4]
   coordinates{
-(1,1600)(2,1600)(3,1600)(4,1600)(5,1600)};
+(0,8050)(1,1586)(2,1573)(3,1667)(4,1590)(5,1584)};
 \addplot[ybar, draw=black, mark=none, fill=blue, xshift=4]
   coordinates{
-(0,8000)};
+(0,8000)(1,1596)(2,1583)(3,1677)(4,1600)(5,1594)};
 \end{axis}
 \end{tikzpicture}
 
@@ -277,10 +276,10 @@ xticklabels={
 },]
 \addplot[ybar, draw=black, mark=none, fill=red, xshift=-4]
   coordinates{
-(1,5126400)(2,5126400)(3,5126400)(4,5126400)(5,5126400)};
+(0,32200)(1,5087888)(2,5046184)(3,5347736)(4,5100720)(5,5081472)};
 \addplot[ybar, draw=black, mark=none, fill=blue, xshift=4]
   coordinates{
-(0,25632000)};
+(0,25664000)(1,6384)(2,6332)(3,6708)(4,6400)(5,6376)};
 \end{axis}
 \end{tikzpicture}
 
@@ -292,8 +291,7 @@ xticklabels={
   axis x line=bottom,x axis line style={-,line width=1pt},
   axis y line=left,y axis line style={-,line width=1pt},
   enlarge y limits={value=0.02,upper},
-ymin=0,
-  ylabel style={at={(0,7cm)},rotate=-90,anchor=north west},
+  ymode=log,log basis y=10,  ymin=1e-1,
 ymajorgrids,xminorgrids,minor x tick num=1,
 title=P2P Duration,ylabel={sec},
 x tick label style={rotate=90,anchor=east,font=\ttfamily\footnotesize},
@@ -311,7 +309,7 @@ xticklabels={
 Process 0,Process 1,Process 2,Process 3,Process 4,Process 5,},]
 \addplot[ybar, draw=black, mark=none, fill=red]
   coordinates{
-(1,48.3365712)(2,37.6133575)(3,24.1584843)(4,31.7870589)(5,45.3695342)};
+(0,0.508364347)(1,0.18271148)(2,0.151999089)(3,0.156978443)(4,0.142833953)(5,0.153587166)};
 \end{axis}
 \end{tikzpicture}
 
@@ -327,25 +325,97 @@ Process 0,Process 1,Process 2,Process 3,Process 4,Process 5,},]
 \end{flushright}
 \newpage
 
+\center{\Large \bf P2P - Message Rate (average)}
+\bigskip
+
+\begin{center}
+\begin{tikzpicture} [step=1cm,scale=0.7,every node/.style={scale=0.7}]\node[anchor=east] at (0,5.5) {\shortstack[r]{Process 0}};
+\node[anchor=west,rotate=90] at (0.5,6) {\shortstack[l]{Process 0}};
+\node[anchor=east] at (0,4.5) {\shortstack[r]{Process 1}};
+\node[anchor=west,rotate=90] at (1.5,6) {\shortstack[l]{Process 1}};
+\node[anchor=east] at (0,3.5) {\shortstack[r]{Process 2}};
+\node[anchor=west,rotate=90] at (2.5,6) {\shortstack[l]{Process 2}};
+\node[anchor=east] at (0,2.5) {\shortstack[r]{Process 3}};
+\node[anchor=west,rotate=90] at (3.5,6) {\shortstack[l]{Process 3}};
+\node[anchor=east] at (0,1.5) {\shortstack[r]{Process 4}};
+\node[anchor=west,rotate=90] at (4.5,6) {\shortstack[l]{Process 4}};
+\node[anchor=east] at (0,0.5) {\shortstack[r]{Process 5}};
+\node[anchor=west,rotate=90] at (5.5,6) {\shortstack[l]{Process 5}};
+\node[minimum size=1cm,anchor=south west] at (0,4) [rectangle, fill={rgb,1:red,0.895789 ;green,0.895789;blue,0.895789}] {};
+\node[minimum size=1cm,anchor=south west] at (0,3) [rectangle, fill={rgb,1:red,0.895435 ;green,0.895435;blue,0.895435}] {};
+\node[minimum size=1cm,anchor=south west] at (0,2) [rectangle, fill={rgb,1:red,0.895548 ;green,0.895548;blue,0.895548}] {};
+\node[minimum size=1cm,anchor=south west] at (0,1) [rectangle, fill={rgb,1:red,0.896061 ;green,0.896061;blue,0.896061}] {};
+\node[minimum size=1cm,anchor=south west] at (0,0) [rectangle, fill={rgb,1:red,0.895535 ;green,0.895535;blue,0.895535}] {};
+\node[minimum size=1cm,anchor=south west] at (1,5) [rectangle, fill={rgb,1:red,0.793794 ;green,1;blue,0}] {};
+\node[minimum size=1cm,anchor=south west] at (2,5) [rectangle, fill={rgb,1:red,1 ;green,0.477025;blue,0}] {};
+\node[minimum size=1cm,anchor=south west] at (3,5) [rectangle, fill={rgb,1:red,1 ;green,0.358782;blue,0}] {};
+\node[minimum size=1cm,anchor=south west] at (4,5) [rectangle, fill={rgb,1:red,1 ;green,0.134785;blue,0}] {};
+\node[minimum size=1cm,anchor=south west] at (5,5) [rectangle, fill={rgb,1:red,1 ;green,0.49249;blue,0}] {};
+\draw[dotted] (-0.2,0) grid[step=1cm] (6,6.2);
+\draw (0,6) -- (-1.2,7.2) node [above right=-1, rotate=-45] {Receiver} node [below right, rotate=-45] {Sender};
+\end{tikzpicture}\bigskip
+
+\begin{tikzpicture} [step=1cm,scale=0.7,every node/.style={scale=0.7}]
+\node[minimum size=0.95cm,anchor=south west] at (-1,-2) [rectangle, fill={rgb,1:red,0.9000 ;green,0.9000;blue,0.9000}] {};
+\node[anchor=east,rotate=90] at (-0.5000,-2) {0.0000 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (0,-2) [rectangle, fill={rgb,1:red,0.7750 ;green,0.7750;blue,0.7750}] {};
+\node[anchor=east,rotate=90] at (0.5000,-2) {1.7500 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (1,-2) [rectangle, fill={rgb,1:red,0.6500 ;green,0.6500;blue,0.6500}] {};
+\node[anchor=east,rotate=90] at (1.5000,-2) {3.5000 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (2,-2) [rectangle, fill={rgb,1:red,0.5250 ;green,0.5250;blue,0.5250}] {};
+\node[anchor=east,rotate=90] at (2.5000,-2) {5.2500 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (3,-2) [rectangle, fill={rgb,1:red,0.0000 ;green,0.0000;blue,1.0000}] {};
+\node[anchor=east,rotate=90] at (3.5000,-2) {7.0000 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (4,-2) [rectangle, fill={rgb,1:red,0.0000 ;green,0.2500;blue,1.0000}] {};
+\node[anchor=east,rotate=90] at (4.5000,-2) {8.7500 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (5,-2) [rectangle, fill={rgb,1:red,0.0000 ;green,0.5000;blue,1.0000}] {};
+\node[anchor=east,rotate=90] at (5.5000,-2) {10.5000 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (6,-2) [rectangle, fill={rgb,1:red,0.0000 ;green,0.7500;blue,1.0000}] {};
+\node[anchor=east,rotate=90] at (6.5000,-2) {12.2500 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (7,-2) [rectangle, fill={rgb,1:red,0.0000 ;green,1.0000;blue,1.0000}] {};
+\node[anchor=east,rotate=90] at (7.5000,-2) {14.0000 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (8,-2) [rectangle, fill={rgb,1:red,0.0000 ;green,1.0000;blue,0.7500}] {};
+\node[anchor=east,rotate=90] at (8.5000,-2) {15.7500 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (9,-2) [rectangle, fill={rgb,1:red,0.0000 ;green,1.0000;blue,0.5000}] {};
+\node[anchor=east,rotate=90] at (9.5000,-2) {17.5000 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (10,-2) [rectangle, fill={rgb,1:red,0.0000 ;green,1.0000;blue,0.2500}] {};
+\node[anchor=east,rotate=90] at (10.5000,-2) {19.2500 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (11,-2) [rectangle, fill={rgb,1:red,0.0000 ;green,1.0000;blue,0.0000}] {};
+\node[anchor=east,rotate=90] at (11.5000,-2) {21.0000 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (12,-2) [rectangle, fill={rgb,1:red,0.2500 ;green,1.0000;blue,0.0000}] {};
+\node[anchor=east,rotate=90] at (12.5000,-2) {22.7500 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (13,-2) [rectangle, fill={rgb,1:red,0.5000 ;green,1.0000;blue,0.0000}] {};
+\node[anchor=east,rotate=90] at (13.5000,-2) {24.5000 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (14,-2) [rectangle, fill={rgb,1:red,0.7500 ;green,1.0000;blue,0.0000}] {};
+\node[anchor=east,rotate=90] at (14.5000,-2) {26.2500 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (15,-2) [rectangle, fill={rgb,1:red,1.0000 ;green,1.0000;blue,0.0000}] {};
+\node[anchor=east,rotate=90] at (15.5000,-2) {28.0000 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (16,-2) [rectangle, fill={rgb,1:red,1.0000 ;green,0.7500;blue,0.0000}] {};
+\node[anchor=east,rotate=90] at (16.5000,-2) {29.7500 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (17,-2) [rectangle, fill={rgb,1:red,1.0000 ;green,0.5000;blue,0.0000}] {};
+\node[anchor=east,rotate=90] at (17.5000,-2) {31.5000 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (18,-2) [rectangle, fill={rgb,1:red,1.0000 ;green,0.2500;blue,0.0000}] {};
+\node[anchor=east,rotate=90] at (18.5000,-2) {33.2500 MByte/s};
+\node[minimum size=0.95cm,anchor=south west] at (19,-2) [rectangle, fill={rgb,1:red,1.0000 ;green,0.0000;blue,0.0000}] {};
+\node[anchor=east,rotate=90] at (19.5000,-2) {35.0000 MByte/s};
+\end{tikzpicture}
+\end{center}
+\newpage
 \center{\Large \bf P2P - Message Rate Histogram}
 \bigskip
 
 \begin{center}
 \begin{tikzpicture} [step=1cm,scale=0.5,every node/.style={scale=0.5}]\Large
-\node[minimum size=1cm,anchor=south west] at (11,0) [rectangle, fill={rgb,1:red,0.825504;green,0.825504;blue,0.825504}] {};
-\node[minimum size=1cm,anchor=south west] at (11,1) [rectangle, fill={rgb,1:red,0.813962;green,0.813962;blue,0.813962}] {};
-\node[minimum size=1cm,anchor=south west] at (11,2) [rectangle, fill={rgb,1:red,0.859779;green,0.859779;blue,0.859779}] {};
-\node[minimum size=1cm,anchor=south west] at (11,3) [rectangle, fill={rgb,1:red,0.896502;green,0.896502;blue,0.896502}] {};
-\node[minimum size=1cm,anchor=south west] at (11,4) [rectangle, fill={rgb,1:red,0.898251;green,0.898251;blue,0.898251}] {};
-\node[minimum size=1cm,anchor=south west] at (11,5) [rectangle, fill={rgb,1:red,0.899301;green,0.899301;blue,0.899301}] {};
-\node[minimum size=1cm,anchor=south west] at (11,6) [rectangle, fill={rgb,1:red,0.897902;green,0.897902;blue,0.897902}] {};
-\node[minimum size=1cm,anchor=south west] at (11,7) [rectangle, fill={rgb,1:red,0.896852;green,0.896852;blue,0.896852}] {};
-\node[minimum size=1cm,anchor=south west] at (11,8) [rectangle, fill={rgb,1:red,0.894754;green,0.894754;blue,0.894754}] {};
-\node[minimum size=1cm,anchor=south west] at (11,9) [rectangle, fill={rgb,1:red,0.897552;green,0.897552;blue,0.897552}] {};
-\node[minimum size=1cm,anchor=south west] at (11,10) [rectangle, fill={rgb,1:red,0.897552;green,0.897552;blue,0.897552}] {};
-\node[minimum size=1cm,anchor=south west] at (11,11) [rectangle, fill={rgb,1:red,0.873069;green,0.873069;blue,0.873069}] {};
-\node[minimum size=1cm,anchor=south west] at (11,12) [rectangle, fill={rgb,1:red,1.000000;green,0.000000;blue,0.000000}] {};
-\node[minimum size=1cm,anchor=south west] at (11,13) [rectangle, fill={rgb,1:red,0.855932;green,0.855932;blue,0.855932}] {};
+\node[minimum size=1cm,anchor=south west] at (2,0) [rectangle, fill={rgb,1:red,0.900000;green,0.900000;blue,0.900000}] {};
+\node[minimum size=1cm,anchor=south west] at (2,1) [rectangle, fill={rgb,1:red,0.492275;green,1.000000;blue,0.000000}] {};
+\node[minimum size=1cm,anchor=south west] at (2,2) [rectangle, fill={rgb,1:red,1.000000;green,0.825863;blue,0.000000}] {};
+\node[minimum size=1cm,anchor=south west] at (2,3) [rectangle, fill={rgb,1:red,0.896662;green,0.896662;blue,0.896662}] {};
+\node[minimum size=1cm,anchor=south west] at (11,5) [rectangle, fill={rgb,1:red,0.899046;green,0.899046;blue,0.899046}] {};
+\node[minimum size=1cm,anchor=south west] at (11,6) [rectangle, fill={rgb,1:red,0.900000;green,0.900000;blue,0.900000}] {};
+\node[minimum size=1cm,anchor=south west] at (11,7) [rectangle, fill={rgb,1:red,0.900000;green,0.900000;blue,0.900000}] {};
+\node[minimum size=1cm,anchor=south west] at (11,9) [rectangle, fill={rgb,1:red,0.899046;green,0.899046;blue,0.899046}] {};
+\node[minimum size=1cm,anchor=south west] at (11,10) [rectangle, fill={rgb,1:red,0.000000;green,1.000000;blue,0.380317}] {};
+\node[minimum size=1cm,anchor=south west] at (11,11) [rectangle, fill={rgb,1:red,1.000000;green,0.000000;blue,0.000000}] {};
 \draw (0,-0.1) -- (0,0) node[rotate=90,left] at (0,0) {1};
 \draw (1,-0.1) -- (1,0) node[rotate=90,left] at (1,0) {2};
 \draw (2,-0.1) -- (2,0) node[rotate=90,left] at (2,0) {4};
@@ -371,144 +441,70 @@ Process 0,Process 1,Process 2,Process 3,Process 4,Process 5,},]
 \draw (22,-0.1) -- (22,0) node[rotate=90,left] at (22,0) {4M};
 \draw (23,-0.1) -- (23,0) node[rotate=90,left] at (23,0) {8M};
 \draw (24,-0.1) -- (24,0) node[rotate=90,left] at (24,0) {16M};
-\draw (-0.1,0) -- (0,0) node[anchor=east] at (0,0) {4K};
-\draw (-0.1,1) -- (0,1) node[anchor=east] at (0,1) {8K};
-\draw (-0.1,2) -- (0,2) node[anchor=east] at (0,2) {16K};
-\draw (-0.1,3) -- (0,3) node[anchor=east] at (0,3) {32K};
-\draw (-0.1,4) -- (0,4) node[anchor=east] at (0,4) {64K};
-\draw (-0.1,5) -- (0,5) node[anchor=east] at (0,5) {128K};
-\draw (-0.1,6) -- (0,6) node[anchor=east] at (0,6) {256K};
-\draw (-0.1,7) -- (0,7) node[anchor=east] at (0,7) {512K};
-\draw (-0.1,8) -- (0,8) node[anchor=east] at (0,8) {1M};
-\draw (-0.1,9) -- (0,9) node[anchor=east] at (0,9) {2M};
-\draw (-0.1,10) -- (0,10) node[anchor=east] at (0,10) {4M};
-\draw (-0.1,11) -- (0,11) node[anchor=east] at (0,11) {8M};
-\draw (-0.1,12) -- (0,12) node[anchor=east] at (0,12) {16M};
-\draw (-0.1,13) -- (0,13) node[anchor=east] at (0,13) {32M};
-\draw (-0.1,14) -- (0,14) node[anchor=east] at (0,14) {64M};
+\draw (-0.1,0) -- (0,0) node[anchor=east] at (0,0) {16K};
+\draw (-0.1,1) -- (0,1) node[anchor=east] at (0,1) {32K};
+\draw (-0.1,2) -- (0,2) node[anchor=east] at (0,2) {64K};
+\draw (-0.1,3) -- (0,3) node[anchor=east] at (0,3) {128K};
+\draw (-0.1,4) -- (0,4) node[anchor=east] at (0,4) {256K};
+\draw (-0.1,5) -- (0,5) node[anchor=east] at (0,5) {512K};
+\draw (-0.1,6) -- (0,6) node[anchor=east] at (0,6) {1M};
+\draw (-0.1,7) -- (0,7) node[anchor=east] at (0,7) {2M};
+\draw (-0.1,8) -- (0,8) node[anchor=east] at (0,8) {4M};
+\draw (-0.1,9) -- (0,9) node[anchor=east] at (0,9) {8M};
+\draw (-0.1,10) -- (0,10) node[anchor=east] at (0,10) {16M};
+\draw (-0.1,11) -- (0,11) node[anchor=east] at (0,11) {32M};
+\draw (-0.1,12) -- (0,12) node[anchor=east] at (0,12) {64M};
 \draw (-0.1,0) -- (24,0);
-\draw (0,-0.1) -- (0,14); %y axis
-\draw[dotted] (0,0) grid (24,14);
-\node[rotate=90] at (-2,6.5) {rate [byte/sec]};
+\draw (0,-0.1) -- (0,12); %y axis
+\draw[dotted] (0,0) grid (24,12);
+\node[rotate=90] at (-2,5.5) {rate [byte/sec]};
 \node at (12, -1.5) {message length [byte]};
 \end{tikzpicture}\bigskip
 
 \begin{tikzpicture} [step=1cm,scale=0.5,every node/.style={scale=0.5}]\Large
 \node at (11, 0) {Number of Invocations};
-\node[minimum size=0.95cm,anchor=south west] at (1,-1.5) [rectangle, fill={rgb,1:red,0.775332 ;green,0.775332;blue,0.775332}] {};
-\node[anchor=east,rotate=90] at (1.500000,-1.5) {357};
-\node[minimum size=0.95cm,anchor=south west] at (2,-1.5) [rectangle, fill={rgb,1:red,0.650315 ;green,0.650315;blue,0.650315}] {};
-\node[anchor=east,rotate=90] at (2.500000,-1.5) {715};
-\node[minimum size=0.95cm,anchor=south west] at (3,-1.5) [rectangle, fill={rgb,1:red,0.525297 ;green,0.525297;blue,0.525297}] {};
-\node[anchor=east,rotate=90] at (3.500000,-1.5) {1 072};
-\node[minimum size=0.95cm,anchor=south west] at (4,-1.5) [rectangle, fill={rgb,1:red,0.400280 ;green,0.400280;blue,0.400280}] {};
-\node[anchor=east,rotate=90] at (4.500000,-1.5) {1 430};
-\node[minimum size=0.95cm,anchor=south west] at (5,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,0.249475;blue,1.000000}] {};
-\node[anchor=east,rotate=90] at (5.500000,-1.5) {1 787};
-\node[minimum size=0.95cm,anchor=south west] at (6,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,0.499510;blue,1.000000}] {};
-\node[anchor=east,rotate=90] at (6.500000,-1.5) {2 145};
-\node[minimum size=0.95cm,anchor=south west] at (7,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,0.749545;blue,1.000000}] {};
-\node[anchor=east,rotate=90] at (7.500000,-1.5) {2 502};
-\node[minimum size=0.95cm,anchor=south west] at (8,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,0.999580;blue,1.000000}] {};
-\node[anchor=east,rotate=90] at (8.500000,-1.5) {2 860};
-\node[minimum size=0.95cm,anchor=south west] at (9,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,1.000000;blue,0.750385}] {};
-\node[anchor=east,rotate=90] at (9.500000,-1.5) {3 217};
-\node[minimum size=0.95cm,anchor=south west] at (10,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,1.000000;blue,0.500350}] {};
-\node[anchor=east,rotate=90] at (10.500000,-1.5) {3 574};
-\node[minimum size=0.95cm,anchor=south west] at (11,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,1.000000;blue,0.250315}] {};
-\node[anchor=east,rotate=90] at (11.500000,-1.5) {3 932};
-\node[minimum size=0.95cm,anchor=south west] at (12,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,1.000000;blue,0.000280}] {};
-\node[anchor=east,rotate=90] at (12.500000,-1.5) {4 289};
-\node[minimum size=0.95cm,anchor=south west] at (13,-1.5) [rectangle, fill={rgb,1:red,0.249755 ;green,1.000000;blue,0.000000}] {};
-\node[anchor=east,rotate=90] at (13.500000,-1.5) {4 647};
-\node[minimum size=0.95cm,anchor=south west] at (14,-1.5) [rectangle, fill={rgb,1:red,0.499790 ;green,1.000000;blue,0.000000}] {};
-\node[anchor=east,rotate=90] at (14.500000,-1.5) {5 004};
-\node[minimum size=0.95cm,anchor=south west] at (15,-1.5) [rectangle, fill={rgb,1:red,0.749825 ;green,1.000000;blue,0.000000}] {};
-\node[anchor=east,rotate=90] at (15.500000,-1.5) {5 362};
-\node[minimum size=0.95cm,anchor=south west] at (16,-1.5) [rectangle, fill={rgb,1:red,0.999860 ;green,1.000000;blue,0.000000}] {};
-\node[anchor=east,rotate=90] at (16.500000,-1.5) {5 719};
-\node[minimum size=0.95cm,anchor=south west] at (17,-1.5) [rectangle, fill={rgb,1:red,1.000000 ;green,0.750105;blue,0.000000}] {};
-\node[anchor=east,rotate=90] at (17.500000,-1.5) {6 077};
-\node[minimum size=0.95cm,anchor=south west] at (18,-1.5) [rectangle, fill={rgb,1:red,1.000000 ;green,0.500070;blue,0.000000}] {};
-\node[anchor=east,rotate=90] at (18.500000,-1.5) {6 434};
-\node[minimum size=0.95cm,anchor=south west] at (19,-1.5) [rectangle, fill={rgb,1:red,1.000000 ;green,0.250035;blue,0.000000}] {};
-\node[anchor=east,rotate=90] at (19.500000,-1.5) {6 792};
+\node[minimum size=0.95cm,anchor=south west] at (1,-1.5) [rectangle, fill={rgb,1:red,0.775453 ;green,0.775453;blue,0.775453}] {};
+\node[anchor=east,rotate=90] at (1.500000,-1.5) {262};
+\node[minimum size=0.95cm,anchor=south west] at (2,-1.5) [rectangle, fill={rgb,1:red,0.650429 ;green,0.650429;blue,0.650429}] {};
+\node[anchor=east,rotate=90] at (2.500000,-1.5) {524};
+\node[minimum size=0.95cm,anchor=south west] at (3,-1.5) [rectangle, fill={rgb,1:red,0.525405 ;green,0.525405;blue,0.525405}] {};
+\node[anchor=east,rotate=90] at (3.500000,-1.5) {787};
+\node[minimum size=0.95cm,anchor=south west] at (4,-1.5) [rectangle, fill={rgb,1:red,0.400381 ;green,0.400381;blue,0.400381}] {};
+\node[anchor=east,rotate=90] at (4.500000,-1.5) {1 049};
+\node[minimum size=0.95cm,anchor=south west] at (5,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,0.249285;blue,1.000000}] {};
+\node[anchor=east,rotate=90] at (5.500000,-1.5) {1 311};
+\node[minimum size=0.95cm,anchor=south west] at (6,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,0.499332;blue,1.000000}] {};
+\node[anchor=east,rotate=90] at (6.500000,-1.5) {1 573};
+\node[minimum size=0.95cm,anchor=south west] at (7,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,0.749380;blue,1.000000}] {};
+\node[anchor=east,rotate=90] at (7.500000,-1.5) {1 835};
+\node[minimum size=0.95cm,anchor=south west] at (8,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,0.999428;blue,1.000000}] {};
+\node[anchor=east,rotate=90] at (8.500000,-1.5) {2 098};
+\node[minimum size=0.95cm,anchor=south west] at (9,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,1.000000;blue,0.750525}] {};
+\node[anchor=east,rotate=90] at (9.500000,-1.5) {2 360};
+\node[minimum size=0.95cm,anchor=south west] at (10,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,1.000000;blue,0.500477}] {};
+\node[anchor=east,rotate=90] at (10.500000,-1.5) {2 622};
+\node[minimum size=0.95cm,anchor=south west] at (11,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,1.000000;blue,0.250429}] {};
+\node[anchor=east,rotate=90] at (11.500000,-1.5) {2 884};
+\node[minimum size=0.95cm,anchor=south west] at (12,-1.5) [rectangle, fill={rgb,1:red,0.000000 ;green,1.000000;blue,0.000381}] {};
+\node[anchor=east,rotate=90] at (12.500000,-1.5) {3 146};
+\node[minimum size=0.95cm,anchor=south west] at (13,-1.5) [rectangle, fill={rgb,1:red,0.249666 ;green,1.000000;blue,0.000000}] {};
+\node[anchor=east,rotate=90] at (13.500000,-1.5) {3 409};
+\node[minimum size=0.95cm,anchor=south west] at (14,-1.5) [rectangle, fill={rgb,1:red,0.499714 ;green,1.000000;blue,0.000000}] {};
+\node[anchor=east,rotate=90] at (14.500000,-1.5) {3 671};
+\node[minimum size=0.95cm,anchor=south west] at (15,-1.5) [rectangle, fill={rgb,1:red,0.749762 ;green,1.000000;blue,0.000000}] {};
+\node[anchor=east,rotate=90] at (15.500000,-1.5) {3 933};
+\node[minimum size=0.95cm,anchor=south west] at (16,-1.5) [rectangle, fill={rgb,1:red,0.999809 ;green,1.000000;blue,0.000000}] {};
+\node[anchor=east,rotate=90] at (16.500000,-1.5) {4 195};
+\node[minimum size=0.95cm,anchor=south west] at (17,-1.5) [rectangle, fill={rgb,1:red,1.000000 ;green,0.750143;blue,0.000000}] {};
+\node[anchor=east,rotate=90] at (17.500000,-1.5) {4 457};
+\node[minimum size=0.95cm,anchor=south west] at (18,-1.5) [rectangle, fill={rgb,1:red,1.000000 ;green,0.500095;blue,0.000000}] {};
+\node[anchor=east,rotate=90] at (18.500000,-1.5) {4 720};
+\node[minimum size=0.95cm,anchor=south west] at (19,-1.5) [rectangle, fill={rgb,1:red,1.000000 ;green,0.250048;blue,0.000000}] {};
+\node[anchor=east,rotate=90] at (19.500000,-1.5) {4 982};
 \node[minimum size=0.95cm,anchor=south west] at (20,-1.5) [rectangle, fill={rgb,1:red,1.000000 ;green,0.000000;blue,0.000000}] {};
-\node[anchor=east,rotate=90] at (20.500000,-1.5) {7 149};
+\node[anchor=east,rotate=90] at (20.500000,-1.5) {5 244};
 \end{tikzpicture}
 \end{center}
 \newpage
-\pgfplotstableread{
-group cntSend cntRecv bytSend bytRecv durSend durRecv
-0 10 10 0 0 0.00213843294 0.00213843294
-1 10 10 0 0 5.0043732 5.0043732
-2 10 10 0 0 3.35683776 3.35683776
-3 10 10 0 0 0.518557057 0.518557057
-4 10 10 0 0 1.07329388 1.07329388
-5 10 10 0 0 2.48091044 2.48091044
-}\BARRIER
-\begin{flushright}\ttfamily\small
-\begin{tikzpicture}
-\begin{axis}[
-  width=16cm, height=8cm,
-  axis x line=bottom,x axis line style={-,line width=1pt},
-  axis y line=left,y axis line style={-,line width=1pt},
-  enlarge y limits={value=0.02,upper},
-  ymin=0,ymajorgrids,xminorgrids,minor x tick num=1,
-title=BARRIER Invocations,ylabel={},
-x tick label style={rotate=90,anchor=east,font=\ttfamily\footnotesize},
-tick align=outside,
-tick style={line cap=round,line width=0.5pt,color=black,
-      major tick length=4pt,minor tick length=8pt},
-major x tick style={line width=1, color=white},
-scaled y ticks=true,
-bar width=8pt,
-minor grid style={color=gray, line width=0.5pt, dashed},
-xmin=-0.5,
-xmax=5.5,
-xtick={0,...,5},
-xticklabels={
-},]
-\addplot[ybar, draw=black, mark=none, fill=red] table[x=group,y=cntSend] {\BARRIER};
-\end{axis}
-\end{tikzpicture}
-
-\end{flushright}
-\begin{flushright}\ttfamily\small
-\begin{tikzpicture}
-\begin{axis}[
-  width=16cm, height=8cm,
-  axis x line=bottom,x axis line style={-,line width=1pt},
-  axis y line=left,y axis line style={-,line width=1pt},
-  enlarge y limits={value=0.02,upper},
-ymin=0,
-  ylabel style={at={(0,7cm)},rotate=-90,anchor=north west},
-ymajorgrids,xminorgrids,minor x tick num=1,
-title=BARRIER Duration,ylabel={sec},
-x tick label style={rotate=90,anchor=east,font=\ttfamily\footnotesize},
-tick align=outside,
-tick style={line cap=round,line width=0.5pt,color=black,
-      major tick length=4pt,minor tick length=8pt},
-major x tick style={line width=1, color=white},
-scaled y ticks=true,
-bar width=8pt,
-minor grid style={color=gray, line width=0.5pt, dashed},
-xmin=-0.5,
-xmax=5.5,
-xtick={0,...,5},
-xticklabels={
-Process 0,Process 1,Process 2,Process 3,Process 4,Process 5,},]
-\addplot[ybar, draw=black, mark=none, fill=red] table[x=group,y=durSend] {\BARRIER};
-\end{axis}
-\end{tikzpicture}
-
-\end{flushright}
-\begin{flushright}
-\bigskip
-\begin{tikzpicture}
-\end{tikzpicture}
-\end{flushright}
-\newpage
-
 
 \end{document}
