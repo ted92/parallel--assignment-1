@@ -1,0 +1,238 @@
+LOCAL MACHINE:
+
+Sequential RoadMap with graphic:
+
+Time taken: 17 seconds 866 ms 
+CRC is 8e4ee7f6
+
+Time taken: 17 seconds 835 ms 
+CRC is 8e4ee7f6
+
+Time taken: 17 seconds 865 ms 
+CRC is 8e4ee7f6
+
+Time taken: 17 seconds 892 ms 
+CRC is 8e4ee7f6
+
+Time taken: 17 seconds 898 ms 
+CRC is 8e4ee7f6
+
+
+Sequential RoadMap without graphic:
+
+Time taken: 17 seconds 620 ms 
+CRC is 8e4ee7f6
+
+Time taken: 17 seconds 545 ms 
+CRC is 8e4ee7f6
+
+Time taken: 17 seconds 582 ms 
+CRC is 8e4ee7f6
+
+Time taken: 17 seconds 678 ms 
+CRC is 8e4ee7f6
+
+Time taken: 17 seconds 582 ms 
+CRC is 8e4ee7f6
+
+
+Static RoadMap without graphic, 4 processes: (SENDING EACH PIXEL)
+
+Time taken: 24 seconds 999 ms 
+CRC is 8e4ee7f6
+
+Time taken: 22 seconds 819 ms 
+CRC is 8e4ee7f6
+
+Time taken: 24 seconds 329 ms 
+CRC is 8e4ee7f6
+
+Time taken: 22 seconds 575 ms 
+CRC is 8e4ee7f6
+
+Time taken: 25 seconds 957 ms 
+CRC is 8e4ee7f6
+
+
+Dynamic without graphic, 4 processes:
+
+Time taken: 7 seconds 370 ms 
+CRC is 8e4ee7f6
+
+Time taken: 6 seconds 924 ms 
+CRC is 8e4ee7f6
+
+Time taken: 7 seconds 131 ms 
+CRC is 8e4ee7f6
+
+Time taken: 6 seconds 955 ms 
+CRC is 8e4ee7f6
+
+Time taken: 7 seconds 808 ms 
+CRC is 8e4ee7f6
+
+
+Dynamic with graphinc, 4 processes:
+
+Time taken: 7 seconds 299 ms 
+CRC is 8e4ee7f6
+
+Time taken: 7 seconds 590 ms 
+CRC is 8e4ee7f6
+
+Time taken: 7 seconds 422 ms 
+CRC is 8e4ee7f6
+
+Time taken: 7 seconds 558 ms 
+CRC is 8e4ee7f6
+
+Time taken: 7 seconds 438 ms 
+CRC is 8e4ee7f6
+
+
+Static improved with graphic, 4 processes:
+
+Time taken: 10 seconds 314 ms 
+CRC is 8e4ee7f6
+
+Time taken: 10 seconds 383 ms 
+CRC is 8e4ee7f6
+
+Time taken: 10 seconds 354 ms 
+CRC is 8e4ee7f6
+
+Time taken: 10 seconds 765 ms 
+CRC is 8e4ee7f6
+
+Time taken: 10 seconds 347 ms 
+CRC is 8e4ee7f6
+
+
+
+CLUSTER:
+
+
+Static, 4 processes (SENDING EACH PIXEL)
+
+Time taken: 17 seconds 444 ms 
+CRC is 8e4ee7f6
+
+Time taken: 16 seconds 602 ms 
+CRC is 8e4ee7f6
+
+Time taken: 15 seconds 340 ms 
+CRC is 8e4ee7f6
+
+Time taken: 15 seconds 723 ms 
+CRC is 8e4ee7f6
+
+Time taken: 15 seconds 421 ms 
+CRC is 8e4ee7f6
+
+
+Static, 6 processes: (SENDING EACH PIXEL)
+
+Time taken: 14 seconds 185 ms 
+CRC is 8e4ee7f6
+
+Time taken: 13 seconds 74 ms 
+CRC is 8e4ee7f6
+
+Time taken: 13 seconds 764 ms 
+CRC is 8e4ee7f6
+
+Time taken: 14 seconds 158 ms 
+CRC is 8e4ee7f6
+
+Time taken: 14 seconds 161 ms 
+CRC is 8e4ee7f6
+
+
+Static improved, 6 processes:
+
+Time taken: 5 seconds 623 ms 
+CRC is 8e4ee7f6
+
+Time taken: 5 seconds 659 ms 
+CRC is 8e4ee7f6
+
+Time taken: 5 seconds 641 ms 
+CRC is 8e4ee7f6
+
+Time taken: 5 seconds 738 ms 
+CRC is 8e4ee7f6
+
+Time taken: 5 seconds 616 ms 
+CRC is 8e4ee7f6
+
+
+Static improved, 10 processes:
+
+Time taken: 4 seconds 844 ms 
+CRC is 8e4ee7f6
+
+Time taken: 5 seconds 659 ms 
+CRC is 8e4ee7f6
+
+Time taken: 5 seconds 991 ms 
+CRC is 8e4ee7f6
+
+Time taken: 4 seconds 887 ms 
+CRC is 8e4ee7f6
+
+Time taken: 5 seconds 647 ms 
+CRC is 8e4ee7f6
+
+
+Dynamic, 4 processes:
+
+Time taken: 5 seconds 863 ms 
+CRC is 8e4ee7f6
+
+Time taken: 6 seconds 67 ms 
+CRC is 8e4ee7f6
+
+Time taken: 5 seconds 947 ms 
+CRC is 8e4ee7f6
+
+Time taken: 5 seconds 667 ms 
+CRC is 8e4ee7f6
+
+Time taken: 5 seconds 682 ms 
+CRC is 8e4ee7f6
+
+
+Dynamic, 6 processes:
+
+Time taken: 3 seconds 731 ms 
+CRC is 8e4ee7f6
+
+Time taken: 3 seconds 755 ms 
+CRC is 8e4ee7f6
+
+Time taken: 4 seconds 139 ms 
+CRC is 8e4ee7f6
+
+Time taken: 4 seconds 34 ms 
+CRC is 8e4ee7f6
+
+Time taken: 3 seconds 865 ms 
+CRC is 8e4ee7f6
+
+
+Dynamic, 10 processes:
+
+Time taken: 3 seconds 562 ms 
+CRC is 8e4ee7f6
+
+Time taken: 3 seconds 563 ms 
+CRC is 8e4ee7f6
+
+Time taken: 3 seconds 537 ms 
+CRC is 8e4ee7f6
+
+Time taken: 3 seconds 627 ms 
+CRC is 8e4ee7f6
+
+Time taken: 3 seconds 311 ms 
+CRC is 8e4ee7f6

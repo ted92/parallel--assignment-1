@@ -1,0 +1,8 @@
+Remember to remove "localhost" from the hostfile when analyzing performance (you have to turn off graphics to do this)
+
+To profile with gprof, add the following to your ~/.bashrc:
+GMON_OUT_PREFIX="gmon".`uname -n`
+export GMON_OUT_PREFIX
+
+To use Ravel to analyze MPI traces, add the following to your ~/.bashrc:
+source /share/apps/etc/uvrocks-env
