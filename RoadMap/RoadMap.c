@@ -106,11 +106,11 @@ void CreateMap() {
   }
   for(x = 0; x < WIDTH; x++) {
     for(y = 0; y < HEIGHT; y++) {
-      gs_plot(x, y, colorMap[y][x]);
+      //gs_plot(x, y, colorMap[y][x]);
       crc += colorMap[y][x];
     }
   }
-  gs_update();
+  //gs_update();
 }
 
 /**

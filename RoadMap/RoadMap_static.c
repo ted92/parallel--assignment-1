@@ -117,11 +117,10 @@ void CreateMap() {
 
     int j, slave, row_index;
 
-    int buffer_r[3];
+    int buffer_r[WIDTH+1];
     /*
-     * buffer_to_send[0] = color
-     * buffer_to_send[1] = y coordinate
-     * buffer_to_send[2] = x coordinate
+     * buffer_to_send[0-799] = color
+     * buffer_to_send[800] = y coordinate
      *
      * */
 
@@ -136,59 +135,54 @@ void CreateMap() {
         for(slave = 1; slave < size; slave++){
             //for each row per each slave
             for(row_index = (rows*(slave-1)); row_index < (rows*slave); row_index++){
+                MPI_Recv(&buffer_r, (WIDTH+1), MPI_INT, MPI_ANY_SOURCE, 6, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
                 for(j = 0; j < WIDTH; j++){
-                    MPI_Recv(&buffer_r, 3, MPI_INT, MPI_ANY_SOURCE, 6, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-                    y = buffer_r[1]; x = buffer_r[2];
+                    y = buffer_r[WIDTH];
                     //register in buffer the values and then print the map!
-                    colorMap[y][x] = buffer_r[0];
-                    crc += colorMap[y][x];
-                    gs_plot(x, y, colorMap[y][x]);
+                    colorMap[y][j] = buffer_r[j];
+                    crc += colorMap[y][j];
+                    //gs_plot(j, y, colorMap[y][j]);
                 }
-                /*row_rcv[row_index] = buffer_r[1];
-                printf("\ndata y rcv: %d\n", buffer_r[1]);*/
             }
         }
 
-        //the master calculate the rows left
+        //the master calculates the rows left
         for(row_index = (rows*(size-1)); row_index < HEIGHT; row_index++){
             for(x = 0; x < WIDTH; x++){
                 colorMap[row_index][x] = palette[solve(translate_x(x),translate_y(row_index))];
                 crc += colorMap[row_index][x];
-                gs_plot(x, row_index, colorMap[row_index][x]);
+                //gs_plot(x, row_index, colorMap[row_index][x]);
             }
         }
-        gs_update();
+        //gs_update();
     }
 
     else{
         //SLAVE
 
-        int buffer_to_send[3];
+        int buffer_to_send[WIDTH+1];
         /*
-         * buffer_to_send[0] = color
-         * buffer_to_send[1] = y coordinate
-         * buffer_to_send[2] = x coordinate
+         * buffer_to_send[0-799] = color
+         * buffer_to_send[800] = y coordinate
          *
          * */
 
         //calculate the portion to compute:
         int current_row;
         int start_row;
-        // -1 on rank because the 0 is always the master so the slaves start at rank = 1
+        // the rows starts alway at: 0 (rows* 1 - 1), rows (rows * 2 - 1), ... , HEIGHT - rows - remainder of division (rows * size - 1)
         start_row = rows * (rank-1);
 
         //ALL THE VARIABLE MUST BE LOCAL
 
         for(current_row = start_row; current_row < (start_row + rows); current_row ++){
-            buffer_to_send[1] = current_row;
-            //all rows received correctly!
+            buffer_to_send[WIDTH] = current_row;
             for(x = 0; x < WIDTH; x++){
                 //The color is determined by the number of iterations
                 //More iterations means brighter color
-                buffer_to_send[0] = palette[solve(translate_x(x),translate_y(current_row))];
-                buffer_to_send[2] = x;
-                MPI_Send(&buffer_to_send, 3, MPI_INT, 0, 6, MPI_COMM_WORLD);
+                buffer_to_send[x] = palette[solve(translate_x(x),translate_y(current_row))];
             }
+            MPI_Send(&buffer_to_send, (WIDTH+1), MPI_INT, 0, 6, MPI_COMM_WORLD);
         }
     }
     //synchronize each zoom level
@@ -259,10 +253,10 @@ int main (int argc, char *argv[]){
         sw_stop();
         sw_timeString(buf);
 
-        printf("Time taken: %s\n",buf);
+        printf("CRC: %x, ",crc);
+        printf("time: %s\n",buf);
 
         gs_exit();
-        printf("CRC is %x\n",crc);
     }
     return 0;
 }

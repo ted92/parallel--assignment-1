@@ -6,8 +6,8 @@ NUM_HOSTS=5
 if [ "$1" = "profile" ]; then
   echo "localhost" > hostfile
   sh generate_hosts.sh $NUM_HOSTS
-  mpirun -x VT_MAX_FLUSHES=50 -x VT_FILTER_SPEC=mpivt_filter -hostfile hostfile RoadMapProf_dynamic
-  otfprofile RoadMapProf_dynamic.otf
+  mpirun -x VT_MAX_FLUSHES=50 -x VT_FILTER_SPEC=mpivt_filter -hostfile hostfile RoadMapProf
+  otfprofile RoadMapProf.otf
   pdflatex result.tex
 elif [ "$1" = "gprof" ]; then
   echo "localhost" > hostfile
