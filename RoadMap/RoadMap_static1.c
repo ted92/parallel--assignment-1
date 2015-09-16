@@ -142,7 +142,7 @@ void CreateMap() {
                     //register in buffer the values and then print the map!
                     colorMap[y][x] = buffer_r[0];
                     crc += colorMap[y][x];
-                    gs_plot(x, y, colorMap[y][x]);
+                    //gs_plot(x, y, colorMap[y][x]);
                 }
                 /*row_rcv[row_index] = buffer_r[1];
                 printf("\ndata y rcv: %d\n", buffer_r[1]);*/
@@ -154,10 +154,10 @@ void CreateMap() {
             for(x = 0; x < WIDTH; x++){
                 colorMap[row_index][x] = palette[solve(translate_x(x),translate_y(row_index))];
                 crc += colorMap[row_index][x];
-                gs_plot(x, row_index, colorMap[row_index][x]);
+                //gs_plot(x, row_index, colorMap[row_index][x]);
             }
         }
-        gs_update();
+        //gs_update();
     }
 
     else{
