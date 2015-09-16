@@ -1,0 +1,43 @@
+Time taken: 15 seconds 615 ms 
+CRC is 8e4ee7f6
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 80.29     12.53    12.53                             solve (RoadMap.c:62 @ 40187a)
+  6.48     13.54     1.01                             solve (RoadMap.c:63 @ 401872)
+  6.10     14.49     0.95                             solve (RoadMap.c:63 @ 401862)
+  3.43     15.02     0.54                             solve (RoadMap.c:62 @ 401850)
+  3.43     15.56     0.54                             translate_x (RoadMap.c:36 @ 401828)
+  0.13     15.58     0.02                             CreateMap (RoadMap.c:110 @ 4018e3)
+  0.13     15.60     0.02                             CreateMap (RoadMap.c:108 @ 4018e5)
+  0.06     15.61     0.01                             solve (RoadMap.c:64 @ 40186e)
+  0.06     15.62     0.01                             solve (RoadMap.c:64 @ 401876)
+  0.00     15.62     0.00       10     0.00     0.00  CreateMap (RoadMap.c:96 @ 4017a0)
+  0.00     15.62     0.00        1     0.00     0.00  RoadMap (RoadMap.c:121 @ 401920)
+  0.00     15.62     0.00        1     0.00     0.00  setup_colors (RoadMap.c:76 @ 4016c0)
+
+			Call graph
+
+
+granularity: each sample hit covers 2 byte(s) for 0.06% of 15.62 seconds
+
+index % time    self  children    called     name
+                0.00    0.00       1/10          RoadMap (RoadMap.c:136 @ 4019af) [39]
+                0.00    0.00       9/10          RoadMap (RoadMap.c:142 @ 401a2c) [48]
+[10]     0.0    0.00    0.00      10         CreateMap (RoadMap.c:96 @ 4017a0) [10]
+-----------------------------------------------
+                0.00    0.00       1/1           main (RoadMap.c:160 @ 401a8c) [70]
+[11]     0.0    0.00    0.00       1         RoadMap (RoadMap.c:121 @ 401920) [11]
+-----------------------------------------------
+                0.00    0.00       1/1           main (RoadMap.c:156 @ 401a70) [65]
+[12]     0.0    0.00    0.00       1         setup_colors (RoadMap.c:76 @ 4016c0) [12]
+-----------------------------------------------
+
+Index by function name
+
+  [10] CreateMap (RoadMap.c:96 @ 4017a0) [12] setup_colors (RoadMap.c:76 @ 4016c0) [2] solve (RoadMap.c:63 @ 401872)
+   [6] CreateMap (RoadMap.c:110 @ 4018e3) [4] solve (RoadMap.c:62 @ 401850) [9] solve (RoadMap.c:64 @ 401876)
+   [7] CreateMap (RoadMap.c:108 @ 4018e5) [3] solve (RoadMap.c:63 @ 401862) [1] solve (RoadMap.c:62 @ 40187a)
+  [11] RoadMap (RoadMap.c:121 @ 401920) [8] solve (RoadMap.c:64 @ 40186e) [5] translate_x (RoadMap.c:36 @ 401828)
