@@ -26,6 +26,12 @@ RoadMapGProf: RoadMap.c
 RoadMapGPerf: RoadMap.c
 	$(CC) $(CFLAGS) RoadMap.c -o RoadMapGPerf $(INC) $(LIB) -L/state/partition1/apps/lib -lprofiler
 
+RoadMap_static1: RoadMap_static1.c
+	$(CC) $(CFLAGS) RoadMap_static1.c -o RoadMap_static1 $(INC) $(LIB)
+
+RoadMapProf_static1: RoadMap_static1.c
+	$(CCP) $(CFLAGS) -pg RoadMap_static1.c -o RoadMapProf_static1 $(INC) $(LIB)
+
 RoadMap_static: RoadMap_static.c
 	$(CC) $(CFLAGS) RoadMap_static.c -o RoadMap_static $(INC) $(LIB)
 
